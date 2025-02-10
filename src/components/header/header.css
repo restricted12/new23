@@ -1,0 +1,128 @@
+/* Main Header Container */
+.header-outer-container {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(20, 20, 20);
+    height: auto;
+    color: white;
+    transition: all 0.5s ease-in;
+    z-index: 10;
+    padding: 10px 0;
+}
+
+.header-container {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+/* Logo */
+.logo {
+    width: 100px; /* Default size for larger screens */
+    cursor: pointer;
+    flex-shrink: 0; /* Prevent logo from shrinking */
+}
+
+.menu-icon {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* Header Left */
+.header-left {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.header-left ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    gap: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.header-left ul li {
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* Header Right */
+.header-right ul {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.header-right li {
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .header-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+    }
+
+    .header-left ul {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: rgb(20, 20, 20);
+        text-align: center;
+        gap: 15px;
+        display: none;
+    }
+
+    .header-left ul.nav-open {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block; /* Show the menu icon */
+    }
+
+    .logo {
+        width: 90px; /* Slightly smaller for tablet screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header-container {
+        width: 100%;
+        padding: 5px;
+    }
+
+    .logo {
+        width: 70px; /* Further reduce logo size for smaller screens */
+    }
+
+    .header-left ul li {
+        font-size: 0.9rem;
+    }
+
+    .header-right li {
+        font-size: 1rem;
+    }
+}
